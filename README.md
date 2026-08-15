@@ -1,6 +1,30 @@
-# Property Service
+# 🏡 Property Service API
 
-Property Service is a REST API for managing real-estate property listings. It provides create, read, update, and delete (CRUD) operations for properties and persists data in PostgreSQL.
+> **Modern Spring Boot microservice for property listings — clean APIs, Dockerized PostgreSQL, and portfolio‑ready unit tests.**
+
+---
+
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.0-green?logo=springboot)
+![Java](https://img.shields.io/badge/Java-25-orange?logo=coffeescript)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18-blue?logo=postgresql)
+![Docker](https://img.shields.io/badge/Docker-Compose-lightblue?logo=docker)
+![JUnit](https://img.shields.io/badge/JUnit-5-red?logo=junit5)
+![Mockito](https://img.shields.io/badge/Mockito-Unit%20Tests-yellow)
+
+---
+
+A backend service built for **portfolio demonstration** and **interview readiness**.  
+It showcases:
+- **[CRUD endpoints](ca://s?q=Spring_Boot_CRUD_API)** with DTOs and validation
+- **[Global exception handling](ca://s?q=Spring_Boot_validation_and_error_handling)**
+- **[PostgreSQL persistence](ca://s?q=Spring_Boot_PostgreSQL_integration)** via Docker Compose
+- **[Unit tests](ca://s?q=Spring_Boot_unit_testing)** with JUnit 5 + Mockito
+- **[Logging](ca://s?q=Spring_Boot_logging_with_Lombok)** using Lombok `@Slf4j`
+- **[Postman collection](ca://s?q=Postman_collection_for_testing)** for API testing
+
+---
+
+
 
 ## Architecture and tech stack
 
@@ -150,3 +174,16 @@ The suite currently exercises `PropertyService` with Mockito; it does not requir
 ```bash
 ./mvnw package
 ```
+---
+
+## 👨‍💻 Built by Norhaak
+
+Crafted with ❤️ using **Spring Boot**, **PostgreSQL**, and **Docker Compose**.  
+Unit tested with **JUnit 5 + Mockito** for reliability.
+
+🔗 Connect with me:
+- [GitHub](https://github.com/norhaak)
+- [LinkedIn](https://www.linkedin.com/in/norhaak)
+- [Portfolio](https://norhaak.dev) *(optional if you have one)*
+
+---
