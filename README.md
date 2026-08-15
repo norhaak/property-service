@@ -184,6 +184,5 @@ Unit tested with **JUnit 5 + Mockito** for reliability.
 🔗 Connect with me:
 - [GitHub](https://github.com/norhaak)
 - [LinkedIn](https://www.linkedin.com/in/norhaak)
-- [Portfolio](https://norhaak.dev) *(optional if you have one)*
 
 ---
