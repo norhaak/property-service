@@ -1,0 +1,130 @@
+{
+  "info": {
+    "name": "Property Service API",
+    "_postman_id": "12345678-abcd-efgh-ijkl-987654321000",
+    "description": "CRUD endpoints for Spring Boot property microservice",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Property",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Cozy Studio\",\n  \"location\": \"Casablanca\",\n  \"price\": 50000,\n  \"description\": \"Nice place near downtown\",\n  \"imageUrl\": null\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/properties",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["properties"]
+        }
+      },
+      "response": [],
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let jsonData = pm.response.json();",
+              "pm.collectionVariables.set(\"propertyId\", jsonData.id);",
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "List Properties",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/properties",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["properties"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Property by ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/properties/{{propertyId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["properties", "{{propertyId}}"]
+        }
+      },
+      "response": [],
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "let jsonData = pm.response.json();",
+              "pm.expect(jsonData.id).to.eql(parseInt(pm.collectionVariables.get(\"propertyId\")));"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Update Property",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Updated Studio\",\n  \"location\": \"Casablanca\",\n  \"price\": 60000,\n  \"description\": \"Renovated and modern\",\n  \"imageUrl\": \"http://example.com/studio.jpg\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/properties/{{propertyId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["properties", "{{propertyId}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Property",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8080/properties/{{propertyId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["properties", "{{propertyId}}"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "propertyId",
+      "value": "1"
+    }
+  ]
+}
